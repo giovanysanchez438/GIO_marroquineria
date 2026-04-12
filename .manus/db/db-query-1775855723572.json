@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `products` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `sku` varchar(20) NOT NULL,\n  `name` varchar(200) NOT NULL,\n  `description` text,\n  `category` enum('bolsos-dama','billeteras-hombre','accesorios') NOT NULL,\n  `price` decimal(12,2) NOT NULL,\n  `stock` int NOT NULL DEFAULT 0,\n  `images` json,\n  `featured` int DEFAULT 0,\n  `active` int DEFAULT 1,\n  `createdAt` timestamp NOT NULL DEFAULT (now()),\n  `updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `products_id` PRIMARY KEY(`id`),\n  CONSTRAINT `products_sku_unique` UNIQUE(`sku`)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway05.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4H1qpo698RQ4eoN.root --database UrTUmsB6KxZHXqfQdy2X7S --execute CREATE TABLE IF NOT EXISTS `products` (\n  `id` int AUTO_INCREMENT NOT NULL,\n  `sku` varchar(20) NOT NULL,\n  `name` varchar(200) NOT NULL,\n  `description` text,\n  `category` enum('bolsos-dama','billeteras-hombre','accesorios') NOT NULL,\n  `price` decimal(12,2) NOT NULL,\n  `stock` int NOT NULL DEFAULT 0,\n  `images` json,\n  `featured` int DEFAULT 0,\n  `active` int DEFAULT 1,\n  `createdAt` timestamp NOT NULL DEFAULT (now()),\n  `updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n  CONSTRAINT `products_id` PRIMARY KEY(`id`),\n  CONSTRAINT `products_sku_unique` UNIQUE(`sku`)\n)",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 177
+}

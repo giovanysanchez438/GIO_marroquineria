@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1775855283819,
+      "tag": "0000_salty_slayback",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1775855686269,
+      "tag": "0001_solid_daimon_hellstrom",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1775855714152,
+      "tag": "0002_gigantic_pretty_boy",
+      "breakpoints": true
+    }
+  ]
+}
