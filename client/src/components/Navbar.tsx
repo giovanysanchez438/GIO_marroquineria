@@ -60,10 +60,12 @@ export default function Navbar() {
 
         {/* Right icons */}
         <div className="flex items-center gap-3">
-          {/* Botón directo al Panel de Administración */}
-          <Link href="/admin" className="p-2 text-navy/70 hover:text-navy transition-colors" title="Administración">
-            <Settings size={20} />
-          </Link>
+          {/* BOTÓN SECRETO: Solo aparece si escribes ?admin-key en la URL */}
+          {window.location.search.includes("admin-key") && (
+            <Link href="/gio-admin-secret" className="p-2 text-navy/70 hover:text-navy transition-colors" title="Administración">
+              <Settings size={20} />
+            </Link>
+          )}
           
           <Link href="/carrito" className="relative p-2 text-navy/70 hover:text-navy transition-colors">
             <ShoppingBag size={22} />

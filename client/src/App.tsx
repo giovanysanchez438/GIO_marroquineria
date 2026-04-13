@@ -3,7 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
-import { ThemeProvider } from "./contexts/ThemeContext";
+import { ThemeProvider } from "./contexts/ThemeProvider";
 import { CartProvider } from "./contexts/CartContext";
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
@@ -22,14 +22,14 @@ function Router() {
       <Route path="/carrito" component={Cart} />
       <Route path="/checkout" component={Checkout} />
       <Route path="/orden/:orderNumber" component={OrderConfirmation} />
-      <Route path="/admin" component={Admin} />
-      <Route path="/404" component={NotFound} />
+      {/* RUTA SECRETA PARA EL DUEÑO: giomarroquineria.com/gio-admin-secret */}
+      <Route path="/gio-admin-secret" component={Admin} />
       <Route component={NotFound} />
     </Switch>
   );
 }
 
-function App() {
+export default function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
@@ -43,5 +43,3 @@ function App() {
     </ErrorBoundary>
   );
 }
-
-export default App;
