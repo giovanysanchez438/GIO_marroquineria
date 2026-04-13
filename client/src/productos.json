@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "name": "VIVI MINI-1",
+    "price": 85000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "bolsos-dama",
+    "stock": 1
+  },
+  {
+    "id": 2,
+    "name": "VIVI MINI-2",
+    "price": 85000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "bolsos-dama",
+    "stock": 1
+  },
+  {
+    "id": 3,
+    "name": "VIVI MINI-3",
+    "price": 85000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "bolsos-dama",
+    "stock": 1
+  },
+  {
+    "id": 4,
+    "name": "040-1",
+    "price": 50000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "bolsos-dama",
+    "stock": 1
+  },
+  {
+    "id": 5,
+    "name": "040-2",
+    "price": 50000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "bolsos-dama",
+    "stock": 1
+  },
+  {
+    "id": 6,
+    "name": "040-3",
+    "price": 50000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "bolsos-dama",
+    "stock": 1
+  },
+  {
+    "id": 7,
+    "name": "040-4",
+    "price": 50000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "bolsos-dama",
+    "stock": 1
+  },
+  {
+    "id": 8,
+    "name": "CH-MINIPELO-01",
+    "price": 95000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "bolsos-dama",
+    "stock": 1
+  },
+  {
+    "id": 9,
+    "name": "CH-MINIPELO-02",
+    "price": 95000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "bolsos-dama",
+    "stock": 1
+  },
+  {
+    "id": 10,
+    "name": "CH-MINIPELO-03",
+    "price": 95000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "bolsos-dama",
+    "stock": 1
+  },
+  {
+    "id": 11,
+    "name": "060-1",
+    "price": 95000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "bolsos-dama",
+    "stock": 1
+  },
+  {
+    "id": 12,
+    "name": "BOLSOS DOBLE CORREA-1",
+    "price": 160000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "bolsos-dama",
+    "stock": 1
+  },
+  {
+    "id": 13,
+    "name": "BOLSOS DOBLE CORREA-2",
+    "price": 160000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "bolsos-dama",
+    "stock": 1
+  },
+  {
+    "id": 14,
+    "name": "BOLSOS DOBLE CORREA-3",
+    "price": 160000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "bolsos-dama",
+    "stock": 1
+  },
+  {
+    "id": 15,
+    "name": "PORTADOCUMENTOS AUT",
+    "price": 50000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "accesorios",
+    "stock": 4
+  },
+  {
+    "id": 16,
+    "name": "BILLETERAS HOMBRE",
+    "price": 50000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "billeteras-hombre",
+    "stock": 4
+  },
+  {
+    "id": 17,
+    "name": "MINIBILLETERAS DAMA",
+    "price": 50000,
+    "images": ["https://placehold.co/600x800/f5f5f5/1a2b4c?text=GIO+-+Proximamente"],
+    "category": "accesorios",
+    "stock": 4
+  }
+]
