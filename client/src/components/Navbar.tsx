@@ -1,14 +1,11 @@
 import { Link, useLocation } from "wouter";
-import { ShoppingBag, Menu, X, User, LogOut, Settings } from "lucide-react";
+import { ShoppingBag, Menu, X, Settings } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
-import { useAuth } from "@/_core/hooks/useAuth";
-import { getLoginUrl } from "@/const";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { totalItems } = useCart();
-  const { user, isAuthenticated, logout } = useAuth();
   const [location] = useLocation();
 
   const navLinks = [
@@ -63,20 +60,11 @@ export default function Navbar() {
 
         {/* Right icons */}
         <div className="flex items-center gap-3">
-          {isAuthenticated && user?.role === "admin" && (
-            <Link href="/admin" className="p-2 text-navy/70 hover:text-navy transition-colors">
-              <Settings size={20} />
-            </Link>
-          )}
-          {isAuthenticated ? (
-            <button onClick={() => logout()} className="p-2 text-navy/70 hover:text-navy transition-colors" title="Cerrar sesión">
-              <LogOut size={20} />
-            </button>
-          ) : (
-            <a href={getLoginUrl()} className="p-2 text-navy/70 hover:text-navy transition-colors" title="Iniciar sesión">
-              <User size={20} />
-            </a>
-          )}
+          {/* Botón directo al Panel de Administración */}
+          <Link href="/admin" className="p-2 text-navy/70 hover:text-navy transition-colors" title="Administración">
+            <Settings size={20} />
+          </Link>
+          
           <Link href="/carrito" className="relative p-2 text-navy/70 hover:text-navy transition-colors">
             <ShoppingBag size={22} />
             {totalItems > 0 && (
