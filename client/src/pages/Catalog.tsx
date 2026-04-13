@@ -1,31 +1,32 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
+import productos from "../productos.json"; // Importar los productos del Excel
 
 export default function Catalog() {
-  // Lista de productos estática para evitar errores de base de datos
-  const productos = [
-    {
-      id: 1,
-      name: "Bolso de Cuero Artesanal GIO",
-      price: 250000,
-      images: ["https://i.ibb.co/JqYxV4R/bolso-cuero-dama-gio.jpg"], // Reemplaza con tu enlace directo de ImgBB
-      category: "bolsos-dama",
-      stock: 10
-    }
-    // Para agregar otro producto, copia el bloque de arriba, pégalo aquí y cambia los datos.
-  ];
-
   return (
     <div className="min-h-screen flex flex-col bg-cream/30">
       <Navbar />
       <main className="flex-grow container py-12">
-        <h1 className="text-4xl font-bold text-navy mb-8 text-center" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-          Nuestro Catálogo
-        </h1>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {productos.map(p => (
-            <ProductCard key={p.id} {...p} />
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-navy mb-4" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+            Nuestro Catálogo
+          </h1>
+          <div className="w-24 h-px bg-gold mx-auto mb-4" />
+          <p className="text-navy/60 uppercase tracking-widest text-sm">Artesanía en Cuero G·I·O</p>
+        </div>
+        
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {productos.map((p: any) => (
+            <ProductCard 
+              key={p.id} 
+              id={p.id}
+              name={p.name}
+              price={p.price}
+              images={p.images}
+              category={p.category}
+              stock={p.stock}
+            />
           ))}
         </div>
       </main>
