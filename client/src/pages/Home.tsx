@@ -1,12 +1,13 @@
 import { Link } from "wouter";
-import { trpc } from "@/lib/trpc";
 import ProductCard from "@/components/ProductCard";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowRight, Gem, Shield, Truck } from "lucide-react";
+import productos from "../productos.json";
 
 export default function Home() {
-  const { data: featured, isLoading } = trpc.products.featured.useQuery();
+  // Tomar los primeros 4 productos del JSON para la sección destacada
+  const featured = productos.slice(0, 4);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -25,13 +26,7 @@ export default function Home() {
           backgroundSize: "120px 120px, 120px 120px, 60px 60px, 60px 60px",
         }} />
 
-        {/* Golden spiral hint */}
-        <div className="absolute right-0 top-0 w-1/2 h-full opacity-[0.04]" style={{
-          backgroundImage: `radial-gradient(ellipse at 70% 40%, oklch(0.75 0.12 85) 0%, transparent 70%)`,
-        }} />
-
         <div className="container relative flex flex-col items-center justify-center text-center" style={{ minHeight: "85vh" }}>
-          {/* Decorative line */}
           <div className="w-16 h-px mb-8" style={{ background: "oklch(0.75 0.12 85)" }} />
 
           <p className="text-sm tracking-[0.35em] uppercase mb-6 font-medium" style={{ color: "oklch(0.7 0.12 85)", fontFamily: "'Inter', sans-serif" }}>
@@ -67,7 +62,6 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Decorative line */}
           <div className="w-16 h-px mt-12" style={{ background: "oklch(0.75 0.12 85)" }} />
         </div>
       </section>
@@ -110,31 +104,19 @@ export default function Home() {
             </p>
           </div>
 
-          {isLoading ? (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className="animate-pulse">
-                  <div className="aspect-[3/4] bg-cream-dark rounded-sm" />
-                  <div className="mt-4 h-4 bg-cream-dark rounded w-3/4" />
-                  <div className="mt-2 h-5 bg-cream-dark rounded w-1/2" />
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {featured?.map(p => (
-                <ProductCard
-                  key={p.id}
-                  id={p.id}
-                  name={p.name}
-                  price={Number(p.price)}
-                  images={p.images}
-                  category={p.category}
-                  stock={p.stock}
-                />
-              ))}
-            </div>
-          )}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {featured.map((p: any) => (
+              <ProductCard
+                key={p.id}
+                id={p.id}
+                name={p.name}
+                price={Number(p.price)}
+                images={p.images}
+                category={p.category}
+                stock={p.stock}
+              />
+            ))}
+          </div>
 
           <div className="text-center mt-12">
             <Link
@@ -152,7 +134,6 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Women */}
             <Link href="/catalogo?cat=bolsos-dama" className="group relative overflow-hidden aspect-[4/3] bg-navy rounded-sm flex items-end p-8">
               <div className="absolute inset-0 opacity-[0.08]" style={{
                 backgroundImage: `radial-gradient(circle at 30% 70%, oklch(0.75 0.12 85), transparent 60%)`,
@@ -168,7 +149,6 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Men */}
             <Link href="/catalogo?cat=billeteras-hombre" className="group relative overflow-hidden aspect-[4/3] rounded-sm flex items-end p-8" style={{ background: "oklch(0.92 0.02 85)" }}>
               <div className="absolute inset-0 opacity-[0.06]" style={{
                 backgroundImage: `radial-gradient(circle at 70% 30%, oklch(0.75 0.12 85), transparent 60%)`,
