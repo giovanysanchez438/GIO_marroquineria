@@ -21,13 +21,9 @@ function Router() {
       <Route path="/carrito" component={Cart} />
       <Route path="/checkout" component={Checkout} />
       <Route path="/orden/:orderNumber" component={OrderConfirmation} />
-      {/* RUTA SECRETA PARA EL DUEÑO: giomarroquineria.com/gio-admin-secret */}
       <Route path="/gio-admin-secret" component={Admin} />
       
-      {/* SI ALGUIEN ESCRIBE /admin O CUALQUIER OTRA COSA, LO MANDA AL INICIO */}
-      <Route path="/admin">
-        <Redirect to="/" />
-      </Route>
+      {/* Redirigir cualquier otra ruta (incluyendo /admin) a la página de inicio */}
       <Route>
         <Redirect to="/" />
       </Route>
