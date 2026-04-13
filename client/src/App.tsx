@@ -1,7 +1,6 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, Redirect } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeProvider";
 import { CartProvider } from "./contexts/CartContext";
@@ -24,7 +23,14 @@ function Router() {
       <Route path="/orden/:orderNumber" component={OrderConfirmation} />
       {/* RUTA SECRETA PARA EL DUEÑO: giomarroquineria.com/gio-admin-secret */}
       <Route path="/gio-admin-secret" component={Admin} />
-      <Route component={NotFound} />
+      
+      {/* SI ALGUIEN ESCRIBE /admin O CUALQUIER OTRA COSA, LO MANDA AL INICIO */}
+      <Route path="/admin">
+        <Redirect to="/" />
+      </Route>
+      <Route>
+        <Redirect to="/" />
+      </Route>
     </Switch>
   );
 }
